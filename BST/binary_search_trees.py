@@ -36,8 +36,25 @@ class BST:
         else:
             return self.search(root.right, key)
 
-    def inorder_traversal(self):
-        pass
+    def inorder_traversal(self, root):
+        # some inorder traversal
+        if root is not None:
+            self.inorder_traversal(root.left)
+            print(root.data)
+            self.inorder_traversal(root.right)
+
+    def preorder_traversal(self, root):
+        # some preorder traversal
+        if root is not None:
+            print(root.data)
+            self.preorder_traversal(root.left)
+            self.preorder_traversal(root.right)
+
+    def postorder_traversal(self, root):
+        if root is not None:
+            self.postorder_traversal(root.left)
+            self.postorder_traversal(root.right)
+            print(root.data)
 
 
 node1 = Node(5)
@@ -54,3 +71,7 @@ obj.insert(root, node4)
 obj.insert(root, node5)
 obj.insert(root, node6)
 print(obj.search(root, 10))
+# obj.inorder_traversal(root)
+# obj.preorder_traversal(root)
+obj.postorder_traversal(root)
+
