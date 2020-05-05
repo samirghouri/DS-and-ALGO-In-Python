@@ -1,4 +1,7 @@
+from bst_check import isBST_check_1
 # Implementing the binary search tree
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -38,6 +41,7 @@ class BST:
 
     def inorder_traversal(self, root):
         # some inorder traversal
+        # it will give the sorted order of the data
         if root is not None:
             self.inorder_traversal(root.left)
             print(root.data)
@@ -71,7 +75,7 @@ obj.insert(root, node4)
 obj.insert(root, node5)
 obj.insert(root, node6)
 print(obj.search(root, 10))
-# obj.inorder_traversal(root)
+obj.inorder_traversal(root)
 # obj.preorder_traversal(root)
-obj.postorder_traversal(root)
-
+# obj.postorder_traversal(root)
+print(isBST_check_1(root))
